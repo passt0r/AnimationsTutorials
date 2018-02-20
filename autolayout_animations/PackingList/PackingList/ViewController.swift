@@ -29,6 +29,7 @@ class ViewController: UIViewController {
   @IBOutlet var tableView: UITableView!
   @IBOutlet var buttonMenu: UIButton!
   @IBOutlet var titleLabel: UILabel!
+    @IBOutlet weak var menuHeightConstraint: NSLayoutConstraint!
   
   //MARK: further class variables
   
@@ -39,7 +40,31 @@ class ViewController: UIViewController {
   //MARK: class methods
   
   @IBAction func actionToggleMenu(_ sender: AnyObject) {
-    
+    titleLabel.superview?.constraints.forEach { constraint in
+        print("--> \(constraint.description)")
+        }
+    isMenuOpen = !isMenuOpen
+    titleLabel.superview?.constraints.forEach({ (constraint) in
+        if constraint.firstItem === titleLabel &&
+            constraint.firstAttribute == .centerX {
+            constraint.constant = isMenuOpen ? -100.0 : 0.0
+            return
+        }
+        if constraint.identifier == "TitleCenterY" {
+            constraint.isActive = false
+            let newConstraint = NSLayoutConstraint(item: titleLabel, attribute: .centerY, relatedBy: .equal, toItem: titleLabel.superview, attribute: .centerY, multiplier: isMenuOpen ? 0.67 : 1.0 , constant: 5.0)
+            newConstraint.identifier = "TitleCenterY"
+            newConstraint.isActive = true
+            
+        }
+    })
+    menuHeightConstraint.constant = isMenuOpen ? 200.0 : 60.0
+    titleLabel.text = isMenuOpen ? "Select Item" : "Packing List"
+    UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 10.0, options: .curveEaseIn, animations: {
+        self.view.layoutIfNeeded()
+        let angel: CGFloat = self.isMenuOpen ? .pi/4.0 : 0.0
+        self.buttonMenu.transform = CGAffineTransform(rotationAngle: angel)
+    }, completion: nil)
   }
   
   func showItem(_ index: Int) {

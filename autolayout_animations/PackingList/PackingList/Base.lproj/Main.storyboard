@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +40,7 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="pja-7i-AP9" firstAttribute="centerY" secondItem="Fxm-t5-hkF" secondAttribute="centerY" constant="5" id="1Z3-0l-0EL"/>
+                                    <constraint firstItem="pja-7i-AP9" firstAttribute="centerY" secondItem="Fxm-t5-hkF" secondAttribute="centerY" constant="5" identifier="TitleCenterY" id="1Z3-0l-0EL"/>
                                     <constraint firstItem="pja-7i-AP9" firstAttribute="centerX" secondItem="Fxm-t5-hkF" secondAttribute="centerX" id="Dsc-fB-uUn"/>
                                     <constraint firstItem="CWp-lv-Iyj" firstAttribute="centerY" secondItem="pja-7i-AP9" secondAttribute="centerY" id="IHu-o0-wmK"/>
                                     <constraint firstAttribute="height" constant="60" id="gpl-rM-R3G"/>
@@ -80,12 +79,14 @@
                     </view>
                     <connections>
                         <outlet property="buttonMenu" destination="CWp-lv-Iyj" id="gIv-Rb-aVk"/>
+                        <outlet property="menuHeightConstraint" destination="gpl-rM-R3G" id="dDO-24-9nP"/>
                         <outlet property="tableView" destination="qO4-YH-bdG" id="XtU-HB-eIZ"/>
                         <outlet property="titleLabel" destination="pja-7i-AP9" id="CfN-oF-VGI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="59.820089955022496"/>
         </scene>
     </scenes>
 </document>
