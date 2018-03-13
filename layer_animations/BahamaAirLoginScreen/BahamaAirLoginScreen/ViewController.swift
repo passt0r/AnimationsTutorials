@@ -79,17 +79,22 @@ class ViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-
+    username.layer.position.x -= view.bounds.width
+    password.layer.position.x -= view.bounds.width
     let flyRight = CABasicAnimation(keyPath: "position.x")
     flyRight.fromValue = -view.bounds.size.width/2
     flyRight.toValue = view.bounds.size.width/2
     flyRight.duration = 0.5
+    flyRight.fillMode = kCAFillModeBoth
     heading.layer.add(flyRight, forKey: nil)
     
     flyRight.beginTime = CACurrentMediaTime() + 0.3
     username.layer.add(flyRight, forKey: nil)
+    username.layer.position.x = view.bounds.size.width/2
     
-    password.center.x -= view.bounds.width
+    flyRight.beginTime = CACurrentMediaTime() + 0.4
+    password.layer.add(flyRight, forKey: nil)
+    password.layer.position.x = view.bounds.size.width/2
 
     cloud1.alpha = 0.0
     cloud2.alpha = 0.0
@@ -104,14 +109,6 @@ class ViewController: UIViewController {
     super.viewDidAppear(animated)
 
     
-
-    UIView.animate(withDuration: 0.5, delay: 0.4, usingSpringWithDamping: 0.6,
-      initialSpringVelocity: 0.0,
-      animations: {
-        self.password.center.x += self.view.bounds.width
-      },
-      completion: nil
-    )
 
     UIView.animate(withDuration: 0.5, delay: 0.5,
       animations: {
