@@ -30,7 +30,7 @@ class RootContainerViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    showSplashViewControllerNoPing()
+    showSplashViewController()
   }
   
   /// Does not transition to any other UIViewControllers, SplashViewController only

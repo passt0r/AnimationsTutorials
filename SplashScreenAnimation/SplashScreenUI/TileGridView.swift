@@ -127,7 +127,49 @@ extension TileGridView {
   }
   
   fileprivate func startAnimatingWithBeginTime(_ beginTime: TimeInterval) {
+    let linearTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    
+    let keyframe = CAKeyframeAnimation(keyPath: "transform.scale")
+    keyframe.timingFunctions = [linearTimingFunction, CAMediaTimingFunction(controlPoints: 0.6, 0.0, 0.15, 1.0), linearTimingFunction]
+    keyframe.repeatCount = Float.infinity;
+    keyframe.duration = kAnimationDuration
+    keyframe.isRemovedOnCompletion = false
+    keyframe.keyTimes = [0.0, 0.45, 0.887, 1.0]
+    keyframe.values = [0.75, 0.75, 1.0, 1.0]
+    keyframe.beginTime = beginTime
+    keyframe.timeOffset = kAnimationTimeOffset
+    
+    containerView.layer.add(keyframe, forKey: "scale")
+    
+    for tileRows in tileViewRows {
+        for view in tileRows {
+            
+            let distance = self.distanceFromCenterViewWithView(view: view)
+            var vector = self.normalizedVectorFromCenterViewToView(view: view)
+            
+            vector = CGPoint(x: vector.x * kRippleMagnitudeMultiplier * distance, y: vector.y * kRippleMagnitudeMultiplier * distance)
+            
+            view.startAnimatingWithDuration(kAnimationDuration, beginTime: beginTime, rippleDelay: kRippleDelayMultiplier * TimeInterval(distance), rippleOffset: vector)
+        }
+    }
   }
+    
+    fileprivate func distanceFromCenterViewWithView(view: UIView)->CGFloat {
+        guard let centerTileView = centerTileView else { return 0.0 }
+        
+        let normalizedX = (view.center.x - centerTileView.center.x)
+        let normalizedY = (view.center.y - centerTileView.center.y)
+        return sqrt(normalizedX * normalizedX + normalizedY * normalizedY)
+    }
+    
+    fileprivate func normalizedVectorFromCenterViewToView(view: UIView)->CGPoint {
+        let length = self.distanceFromCenterViewWithView(view: view)
+        guard let centerTileView = centerTileView, length != 0 else { return CGPoint.zero }
+        
+        let deltaX = view.center.x - centerTileView.center.x
+        let deltaY = view.center.y - centerTileView.center.y
+        return CGPoint(x: deltaX / length, y: deltaY / length)
+    }
   
 }
 
