@@ -175,10 +175,10 @@ class ViewController: UIViewController {
       completion: nil
     )
     
-    animateCloud(cloud1)
-    animateCloud(cloud2)
-    animateCloud(cloud3)
-    animateCloud(cloud4)
+    animateCloud(layer: cloud1.layer)
+    animateCloud(layer: cloud2.layer)
+    animateCloud(layer: cloud3.layer)
+    animateCloud(layer: cloud4.layer)
     
     username.delegate = self
     password.delegate = self
@@ -274,28 +274,19 @@ class ViewController: UIViewController {
     tintBackgroundColor(layer: loginButton.layer, toColor: tintColor)
     roundCorners(layer: loginButton.layer, toRadius: 25.0)
   }
-
-  func animateCloud(_ cloud: UIImageView) {
-    let cloudSpeed = 60.0 / view.frame.size.width
-    let duration = (view.frame.size.width - cloud.frame.origin.x) * cloudSpeed
-    UIView.animate(withDuration: TimeInterval(duration), delay: 0.0, options: .curveLinear,
-      animations: {
-        cloud.frame.origin.x = self.view.frame.size.width
-      },
-      completion: {_ in
-        cloud.frame.origin.x = -cloud.frame.size.width
-        self.animateCloud(cloud)
-      }
-    )
-  }
-
-  // MARK: UITextFieldDelegate
-
-  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    let nextField = (textField === username) ? password : username
-    nextField?.becomeFirstResponder()
-    return true
-  }
+    
+    func animateCloud(layer: CALayer) {
+        let cloudSpeed = 60.0 / Double(view.layer.frame.size.width)
+        let duration = Double(view.layer.frame.size.width - layer.frame.origin.x) * cloudSpeed
+        
+        let cloudMode = CABasicAnimation(keyPath: "position.x")
+        cloudMode.duration = duration
+        cloudMode.toValue = self.view.bounds.width + layer.bounds.width/2
+        cloudMode.delegate = self
+        cloudMode.setValue("cloud", forKey: "name")
+        cloudMode.setValue(layer, forKey: "layer")
+        layer.add(cloudMode, forKey: nil)
+    }
 
 }
 
@@ -305,15 +296,23 @@ extension ViewController: CAAnimationDelegate {
             return
         }
         
-        if name == "form" {
-            let layer = anim.value(forKey: "layer") as? CALayer
+        if name == "form",  let layer = anim.value(forKey: "layer") as? CALayer {
             anim.setValue(nil, forKey: "layer")
             
             let pusle = CABasicAnimation(keyPath: "transform.scale")
             pusle.fromValue = 1.25
             pusle.toValue = 1.0
             pusle.duration = 0.25
-            layer?.add(pusle, forKey: nil)
+            layer.add(pusle, forKey: nil)
+        }
+        
+        if name == "cloud", let layer = anim.value(forKey: "layer") as? CALayer {
+            anim.setValue(nil, forKey: "layer")
+            
+            layer.position.x = -layer.bounds.width/2
+            delay(seconds: 0.5, completion: {
+                self.animateCloud(layer: layer)
+            })
         }
     }
 }
@@ -321,5 +320,11 @@ extension ViewController: CAAnimationDelegate {
 extension ViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         info.layer.removeAnimation(forKey: "infoappear")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextField = (textField === username) ? password : username
+        nextField?.becomeFirstResponder()
+        return true
     }
 }
