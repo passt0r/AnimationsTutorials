@@ -106,28 +106,52 @@ class ViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    username.layer.position.x -= view.bounds.width
-    password.layer.position.x -= view.bounds.width
+//    username.layer.position.x -= view.bounds.width
+//    password.layer.position.x -= view.bounds.width
+//    let flyRight = CABasicAnimation(keyPath: "position.x")
+//    flyRight.fromValue = -view.bounds.size.width/2
+//    flyRight.toValue = view.bounds.size.width/2
+//    flyRight.duration = 0.5
+//    flyRight.fillMode = kCAFillModeBoth
+//    flyRight.delegate = self
+//    flyRight.setValue("form", forKey: "name")
+//    flyRight.setValue(heading.layer, forKey: "layer")
+//
+//    heading.layer.add(flyRight, forKey: nil)
+//
+//    flyRight.beginTime = CACurrentMediaTime() + 0.3
+//    flyRight.setValue(username.layer, forKey: "layer")
+//    username.layer.add(flyRight, forKey: nil)
+//    username.layer.position.x = view.bounds.size.width/2
+//
+//    flyRight.beginTime = CACurrentMediaTime() + 0.4
+//    flyRight.setValue(password.layer, forKey: "layer")
+//    password.layer.add(flyRight, forKey: nil)
+//    password.layer.position.x = view.bounds.size.width/2
+    
+    let groupAnimation = CAAnimationGroup()
+    groupAnimation.duration = 0.5
+    groupAnimation.fillMode = kCAFillModeBoth
+    let fade = CABasicAnimation(keyPath: "opacity")
+    fade.fromValue = 0.25
+    fade.toValue = 1.0
+    
     let flyRight = CABasicAnimation(keyPath: "position.x")
     flyRight.fromValue = -view.bounds.size.width/2
     flyRight.toValue = view.bounds.size.width/2
-    flyRight.duration = 0.5
-    flyRight.fillMode = kCAFillModeBoth
-    flyRight.delegate = self
-    flyRight.setValue("form", forKey: "name")
-    flyRight.setValue(heading.layer, forKey: "layer")
     
-    heading.layer.add(flyRight, forKey: nil)
+    groupAnimation.animations = [fade, flyRight]
+    groupAnimation.delegate = self
+    groupAnimation.setValue("form", forKey: "name")
     
-    flyRight.beginTime = CACurrentMediaTime() + 0.3
-    flyRight.setValue(username.layer, forKey: "layer")
-    username.layer.add(flyRight, forKey: nil)
-    username.layer.position.x = view.bounds.size.width/2
-    
-    flyRight.beginTime = CACurrentMediaTime() + 0.4
-    flyRight.setValue(password.layer, forKey: "layer")
-    password.layer.add(flyRight, forKey: nil)
-    password.layer.position.x = view.bounds.size.width/2
+    groupAnimation.setValue(heading.layer, forKey: "layer")
+    heading.layer.add(groupAnimation, forKey: nil)
+    groupAnimation.beginTime = CACurrentMediaTime() + 0.3
+    groupAnimation.setValue(username.layer, forKey: "layer")
+    username.layer.add(groupAnimation, forKey: nil)
+    groupAnimation.beginTime = CACurrentMediaTime() + 0.4
+    groupAnimation.setValue(password.layer, forKey: "layer")
+    password.layer.add(groupAnimation, forKey: nil)
     
     let cloudAnimation = CABasicAnimation(keyPath: "opacity")
     cloudAnimation.fromValue = 0.0
@@ -146,9 +170,6 @@ class ViewController: UIViewController {
     
     cloudAnimation.beginTime = CACurrentMediaTime() + 1.1
     cloud4.layer.add(cloudAnimation, forKey: nil)
-
-    loginButton.center.y += 30.0
-    loginButton.alpha = 0.0
     
     let flyLeft = CABasicAnimation(keyPath: "position.x")
     flyLeft.fromValue = info.layer.position.x + view.frame.size.width
@@ -165,15 +186,28 @@ class ViewController: UIViewController {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-
-    UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5,
-      initialSpringVelocity: 0.0,
-      animations: {
-        self.loginButton.center.y -= 30.0
-        self.loginButton.alpha = 1.0
-      },
-      completion: nil
-    )
+    
+    let groupAnimation = CAAnimationGroup()
+    groupAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+    groupAnimation.beginTime = CACurrentMediaTime() + 0.5
+    groupAnimation.duration = 0.5
+    groupAnimation.fillMode = kCAFillModeBackwards
+    
+    let scale = CABasicAnimation(keyPath: "transform.scale")
+    scale.fromValue = 3.5
+    scale.toValue = 1.0
+    
+    let rotate = CABasicAnimation(keyPath: "transform.rotation")
+    rotate.fromValue = .pi/4.0
+    rotate.toValue = 0.0
+    
+    let fade = CABasicAnimation(keyPath: "opacity")
+    fade.fromValue = 0.0
+    fade.toValue = 1.0
+    
+    groupAnimation.animations = [scale, rotate, fade]
+    
+    loginButton.layer.add(groupAnimation, forKey: nil)
     
     animateCloud(layer: cloud1.layer)
     animateCloud(layer: cloud2.layer)
