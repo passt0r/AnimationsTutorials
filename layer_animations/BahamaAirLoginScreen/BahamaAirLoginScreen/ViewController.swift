@@ -33,7 +33,7 @@ func tintBackgroundColor(layer: CALayer, toColor: UIColor) {
     colorAnimation.toValue = toColor.cgColor
     
     colorAnimation.damping = 28.0
-    colorAnimation.initialVelocity = 2.0
+    colorAnimation.initialVelocity = 5.0
     colorAnimation.mass = 3.0
     colorAnimation.stiffness = 600.0
     
@@ -48,7 +48,7 @@ func roundCorners(layer: CALayer, toRadius: CGFloat) {
     roundAnimation.toValue = toRadius
     
     roundAnimation.damping = 28.0
-    roundAnimation.initialVelocity = 2.0
+    roundAnimation.initialVelocity = 5.0
     roundAnimation.mass = 3.0
     roundAnimation.stiffness = 600.0
     
@@ -118,28 +118,6 @@ class ViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-//    username.layer.position.x -= view.bounds.width
-//    password.layer.position.x -= view.bounds.width
-//    let flyRight = CABasicAnimation(keyPath: "position.x")
-//    flyRight.fromValue = -view.bounds.size.width/2
-//    flyRight.toValue = view.bounds.size.width/2
-//    flyRight.duration = 0.5
-//    flyRight.fillMode = kCAFillModeBoth
-//    flyRight.delegate = self
-//    flyRight.setValue("form", forKey: "name")
-//    flyRight.setValue(heading.layer, forKey: "layer")
-//
-//    heading.layer.add(flyRight, forKey: nil)
-//
-//    flyRight.beginTime = CACurrentMediaTime() + 0.3
-//    flyRight.setValue(username.layer, forKey: "layer")
-//    username.layer.add(flyRight, forKey: nil)
-//    username.layer.position.x = view.bounds.size.width/2
-//
-//    flyRight.beginTime = CACurrentMediaTime() + 0.4
-//    flyRight.setValue(password.layer, forKey: "layer")
-//    password.layer.add(flyRight, forKey: nil)
-//    password.layer.position.x = view.bounds.size.width/2
     
     let groupAnimation = CAAnimationGroup()
     groupAnimation.duration = 0.5
@@ -289,6 +267,13 @@ class ViewController: UIViewController {
         roundCorners(layer: self.loginButton.layer, toRadius: 10.0)
     }
     )
+    
+    let wobble = CAKeyframeAnimation(keyPath: "transform.rotation")
+    wobble.duration = 0.25
+    wobble.repeatCount = 4
+    wobble.values = [0.0, -.pi/4.0, 0.0, .pi/4.0, 0.0]
+    wobble.keyTimes = [0.0, 0.25, 0.5, 0.75, 1.0]
+    heading.layer.add(wobble, forKey: nil)
   }
 
   // MARK: further methods
@@ -319,6 +304,22 @@ class ViewController: UIViewController {
     let tintColor = UIColor(red: 0.85, green: 0.83, blue: 0.45, alpha: 1.0)
     tintBackgroundColor(layer: loginButton.layer, toColor: tintColor)
     roundCorners(layer: loginButton.layer, toRadius: 25.0)
+    
+    let baloon = CALayer()
+    baloon.contents = UIImage(named: "balloon")?.cgImage
+    baloon.frame = CGRect(x: -50.0, y: 0.0, width: 50.0, height: 65.0)
+    view.layer.insertSublayer(baloon, below: username.layer)
+    
+    let flight = CAKeyframeAnimation(keyPath: "position")
+    flight.duration = 12.0
+    flight.values = [
+        CGPoint(x: -50.0, y: 0.0),
+        CGPoint(x: view.frame.width + 50.0, y: 160.0),
+        CGPoint(x: -50.0, y: loginButton.center.y)
+        ].map {NSValue(cgPoint: $0)}
+    flight.keyTimes = [0.0, 0.5, 1.0]
+    baloon.add(flight, forKey: nil)
+    baloon.position = CGPoint(x: -50.0, y: loginButton.center.y)
   }
     
     func animateCloud(layer: CALayer) {
