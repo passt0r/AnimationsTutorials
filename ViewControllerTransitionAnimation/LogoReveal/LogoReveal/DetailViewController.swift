@@ -24,13 +24,28 @@ import UIKit
 import QuartzCore
 
 class DetailViewController: UITableViewController, UINavigationControllerDelegate {
+    
+    weak var transition: RevealAnimator?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     title = "Pack List"
     tableView.rowHeight = 54.0
+    
+    let pan = UIPanGestureRecognizer(target: self, action: #selector(didPan(recogniser:)))
+    view.addGestureRecognizer(pan)
   }
+    
+    func didPan(recogniser: UIPanGestureRecognizer) {
+        switch recogniser.state {
+        case .began:
+            transition?.interactive = true
+            navigationController?.popViewController(animated: true)
+        default:
+            transition?.handlePan(recognizer: recogniser)
+        }
+    }
   
   // MARK: Table View methods
   let packItems = ["Ice cream money", "Great weather", "Beach ball", "Swimsuit for him", "Swimsuit for her", "Beach games", "Ironing board", "Cocktail mood", "Sunglasses", "Flip flops"]
