@@ -38,8 +38,6 @@ class LockScreenViewController: UIViewController {
     super.viewDidLoad()
 
     view.bringSubview(toFront: searchBar)
-    blurView.effect = UIBlurEffect(style: .dark)
-    blurView.alpha = 0
     blurView.isUserInteractionEnabled = false
     view.insertSubview(blurView, belowSubview: searchBar)
 
@@ -63,7 +61,23 @@ class LockScreenViewController: UIViewController {
   }
   
   func toggleBlur(_ blurred: Bool) {
-    AnimatorFactory.fade(view: blurView, visible: blurred)
+    UIViewPropertyAnimator(duration: 0.55,
+                           controlPoint1: CGPoint(x: 0.57, y: -0.4),
+                           controlPoint2: CGPoint(x: 0.96, y: 0.87),
+                           animations: blurAnimations(blurred)).startAnimation()
+//    AnimatorFactory.fade(view: blurView, visible: blurred)
+  }
+  
+  func blurAnimations(_ blurred: Bool) -> () -> Void {
+    return {
+      self.blurView.effect = blurred ?
+        UIBlurEffect(style: .dark) : nil
+      self.tableView.transform = blurred ?
+        CGAffineTransform(scaleX: 0.75, y: 0.75) : .identity
+      self.tableView.alpha = blurred ? 0.33 : 1.0
+      
+    }
+    
   }
 
   override var preferredStatusBarStyle: UIStatusBarStyle {
