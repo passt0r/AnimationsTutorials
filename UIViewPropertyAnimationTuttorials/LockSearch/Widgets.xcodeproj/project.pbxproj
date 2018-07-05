@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		591F4D5120A4C9430098D0BD /* AnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F4D5020A4C9430098D0BD /* AnimatorFactory.swift */; };
+		59DAFF8320EA7A3000C668D9 /* PresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DAFF8220EA7A3000C668D9 /* PresentTransition.swift */; };
 		9C125E081DAEEFBF00E352C1 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C125E071DAEEFBF00E352C1 /* IconCell.swift */; };
 		9C5513E41DB2619E0085E8A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C5513E31DB2619E0085E8A7 /* Assets.xcassets */; };
 		9C7446771DB2995E0075364A /* WidgetsOwnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7446761DB2995E0075364A /* WidgetsOwnerProtocol.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		591F4D5020A4C9430098D0BD /* AnimatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorFactory.swift; sourceTree = "<group>"; };
+		59DAFF8220EA7A3000C668D9 /* PresentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTransition.swift; sourceTree = "<group>"; };
 		9C125E071DAEEFBF00E352C1 /* IconCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		9C5513E31DB2619E0085E8A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C7446761DB2995E0075364A /* WidgetsOwnerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsOwnerProtocol.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				9CF4C0F41DAE912000F4E30A /* FooterCell.swift */,
 				9C7446761DB2995E0075364A /* WidgetsOwnerProtocol.swift */,
 				591F4D5020A4C9430098D0BD /* AnimatorFactory.swift */,
+				59DAFF8220EA7A3000C668D9 /* PresentTransition.swift */,
 			);
 			name = "Lock Screen View Controller";
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				591F4D5120A4C9430098D0BD /* AnimatorFactory.swift in Sources */,
 				9C7446771DB2995E0075364A /* WidgetsOwnerProtocol.swift in Sources */,
 				9CF4C0F51DAE912000F4E30A /* FooterCell.swift in Sources */,
+				59DAFF8320EA7A3000C668D9 /* PresentTransition.swift in Sources */,
 				9C125E081DAEEFBF00E352C1 /* IconCell.swift in Sources */,
 				9C9E23F81DAD251B004749FD /* LockScreenViewController.swift in Sources */,
 				9C9E23F61DAD251B004749FD /* AppDelegate.swift in Sources */,
