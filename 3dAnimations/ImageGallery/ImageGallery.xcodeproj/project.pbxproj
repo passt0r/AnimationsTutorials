@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C4319691A0C32D80085829B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4319681A0C32D80085829B /* AppDelegate.swift */; };
-		9C43196B1A0C32D80085829B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C43196A1A0C32D80085829B /* ViewController.swift */; };
-		9C43196E1A0C32D90085829B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C43196C1A0C32D90085829B /* Main.storyboard */; };
-		9C4319701A0C32D90085829B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C43196F1A0C32D90085829B /* Images.xcassets */; };
-		9C4319731A0C32D90085829B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4319711A0C32D90085829B /* LaunchScreen.xib */; };
+		9C14B8161A37990000374DA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C14B8151A37990000374DA8 /* AppDelegate.swift */; };
+		9C14B81D1A37990000374DA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C14B81B1A37990000374DA8 /* Main.storyboard */; };
+		9C14B81F1A37990000374DA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C14B81E1A37990000374DA8 /* Images.xcassets */; };
+		9C14B8221A37990000374DA8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C14B8201A37990000374DA8 /* LaunchScreen.xib */; };
+		9C54A0461A379B7A009E48D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54A0441A379B7A009E48D3 /* ViewController.swift */; };
+		9C54A0471A379B7A009E48D3 /* ImageViewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C54A0451A379B7A009E48D3 /* ImageViewCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C4319631A0C32D80085829B /* BahamaAirLoginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BahamaAirLoginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C4319671A0C32D80085829B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C4319681A0C32D80085829B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C43196A1A0C32D80085829B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9C43196D1A0C32D90085829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9C43196F1A0C32D90085829B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9C4319721A0C32D90085829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9C14B8101A37990000374DA8 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C14B8141A37990000374DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C14B8151A37990000374DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C14B81C1A37990000374DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C14B81E1A37990000374DA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9C14B8211A37990000374DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9C54A0441A379B7A009E48D3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C54A0451A379B7A009E48D3 /* ImageViewCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9C4319601A0C32D80085829B /* Frameworks */ = {
+		9C14B80D1A37990000374DA8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,39 +37,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C43195A1A0C32D80085829B = {
+		9C14B8071A37990000374DA8 = {
 			isa = PBXGroup;
 			children = (
-				9C4319651A0C32D80085829B /* BahamaAirLoginScreen */,
-				9C4319641A0C32D80085829B /* Products */,
+				9C14B8121A37990000374DA8 /* ImageGallery */,
+				9C14B8111A37990000374DA8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9C4319641A0C32D80085829B /* Products */ = {
+		9C14B8111A37990000374DA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C4319631A0C32D80085829B /* BahamaAirLoginScreen.app */,
+				9C14B8101A37990000374DA8 /* ImageGallery.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9C4319651A0C32D80085829B /* BahamaAirLoginScreen */ = {
+		9C14B8121A37990000374DA8 /* ImageGallery */ = {
 			isa = PBXGroup;
 			children = (
-				9C4319681A0C32D80085829B /* AppDelegate.swift */,
-				9C43196A1A0C32D80085829B /* ViewController.swift */,
-				9C43196C1A0C32D90085829B /* Main.storyboard */,
-				9C43196F1A0C32D90085829B /* Images.xcassets */,
-				9C4319711A0C32D90085829B /* LaunchScreen.xib */,
-				9C4319661A0C32D80085829B /* Supporting Files */,
+				9C14B8151A37990000374DA8 /* AppDelegate.swift */,
+				9C54A0441A379B7A009E48D3 /* ViewController.swift */,
+				9C54A0451A379B7A009E48D3 /* ImageViewCard.swift */,
+				9C14B81B1A37990000374DA8 /* Main.storyboard */,
+				9C14B81E1A37990000374DA8 /* Images.xcassets */,
+				9C14B8201A37990000374DA8 /* LaunchScreen.xib */,
+				9C14B8131A37990000374DA8 /* Supporting Files */,
 			);
-			path = BahamaAirLoginScreen;
+			path = ImageGallery;
 			sourceTree = "<group>";
 		};
-		9C4319661A0C32D80085829B /* Supporting Files */ = {
+		9C14B8131A37990000374DA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9C4319671A0C32D80085829B /* Info.plist */,
+				9C14B8141A37990000374DA8 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -75,41 +78,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C4319621A0C32D80085829B /* BahamaAirLoginScreen */ = {
+		9C14B80F1A37990000374DA8 /* ImageGallery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C4319821A0C32D90085829B /* Build configuration list for PBXNativeTarget "BahamaAirLoginScreen" */;
+			buildConfigurationList = 9C14B8311A37990000374DA8 /* Build configuration list for PBXNativeTarget "ImageGallery" */;
 			buildPhases = (
-				9C43195F1A0C32D80085829B /* Sources */,
-				9C4319601A0C32D80085829B /* Frameworks */,
-				9C4319611A0C32D80085829B /* Resources */,
+				9C14B80C1A37990000374DA8 /* Sources */,
+				9C14B80D1A37990000374DA8 /* Frameworks */,
+				9C14B80E1A37990000374DA8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BahamaAirLoginScreen;
-			productName = BahamaAirLoginScreen;
-			productReference = 9C4319631A0C32D80085829B /* BahamaAirLoginScreen.app */;
+			name = ImageGallery;
+			productName = ImageGallery;
+			productReference = 9C14B8101A37990000374DA8 /* ImageGallery.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9C43195B1A0C32D80085829B /* Project object */ = {
+		9C14B8081A37990000374DA8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Razeware LLC";
 				TargetAttributes = {
-					9C4319621A0C32D80085829B = {
-						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 8JL9EGKR79;
+					9C14B80F1A37990000374DA8 = {
+						CreatedOnToolsVersion = 6.1.1;
 						LastSwiftMigration = 0800;
 					};
 				};
 			};
-			buildConfigurationList = 9C43195E1A0C32D80085829B /* Build configuration list for PBXProject "BahamaAirLoginScreen" */;
+			buildConfigurationList = 9C14B80B1A37990000374DA8 /* Build configuration list for PBXProject "ImageGallery" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -117,54 +119,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 9C43195A1A0C32D80085829B;
-			productRefGroup = 9C4319641A0C32D80085829B /* Products */;
+			mainGroup = 9C14B8071A37990000374DA8;
+			productRefGroup = 9C14B8111A37990000374DA8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C4319621A0C32D80085829B /* BahamaAirLoginScreen */,
+				9C14B80F1A37990000374DA8 /* ImageGallery */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9C4319611A0C32D80085829B /* Resources */ = {
+		9C14B80E1A37990000374DA8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C43196E1A0C32D90085829B /* Main.storyboard in Resources */,
-				9C4319731A0C32D90085829B /* LaunchScreen.xib in Resources */,
-				9C4319701A0C32D90085829B /* Images.xcassets in Resources */,
+				9C14B81D1A37990000374DA8 /* Main.storyboard in Resources */,
+				9C14B8221A37990000374DA8 /* LaunchScreen.xib in Resources */,
+				9C14B81F1A37990000374DA8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9C43195F1A0C32D80085829B /* Sources */ = {
+		9C14B80C1A37990000374DA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C43196B1A0C32D80085829B /* ViewController.swift in Sources */,
-				9C4319691A0C32D80085829B /* AppDelegate.swift in Sources */,
+				9C54A0461A379B7A009E48D3 /* ViewController.swift in Sources */,
+				9C14B8161A37990000374DA8 /* AppDelegate.swift in Sources */,
+				9C54A0471A379B7A009E48D3 /* ImageViewCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9C43196C1A0C32D90085829B /* Main.storyboard */ = {
+		9C14B81B1A37990000374DA8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9C43196D1A0C32D90085829B /* Base */,
+				9C14B81C1A37990000374DA8 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		9C4319711A0C32D90085829B /* LaunchScreen.xib */ = {
+		9C14B8201A37990000374DA8 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9C4319721A0C32D90085829B /* Base */,
+				9C14B8211A37990000374DA8 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -172,7 +175,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9C4319801A0C32D90085829B /* Debug */ = {
+		9C14B82F1A37990000374DA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -185,8 +188,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -208,7 +213,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -216,7 +221,7 @@
 			};
 			name = Debug;
 		};
-		9C4319811A0C32D90085829B /* Release */ = {
+		9C14B8301A37990000374DA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -229,8 +234,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -245,34 +252,32 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		9C4319831A0C32D90085829B /* Debug */ = {
+		9C14B8321A37990000374DA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8JL9EGKR79;
-				INFOPLIST_FILE = BahamaAirLoginScreen/Info.plist;
+				INFOPLIST_FILE = ImageGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.passt0r.BahamaAirLoginScreen;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		9C4319841A0C32D90085829B /* Release */ = {
+		9C14B8331A37990000374DA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8JL9EGKR79;
-				INFOPLIST_FILE = BahamaAirLoginScreen/Info.plist;
+				INFOPLIST_FILE = ImageGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.passt0r.BahamaAirLoginScreen;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -282,25 +287,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C43195E1A0C32D80085829B /* Build configuration list for PBXProject "BahamaAirLoginScreen" */ = {
+		9C14B80B1A37990000374DA8 /* Build configuration list for PBXProject "ImageGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C4319801A0C32D90085829B /* Debug */,
-				9C4319811A0C32D90085829B /* Release */,
+				9C14B82F1A37990000374DA8 /* Debug */,
+				9C14B8301A37990000374DA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C4319821A0C32D90085829B /* Build configuration list for PBXNativeTarget "BahamaAirLoginScreen" */ = {
+		9C14B8311A37990000374DA8 /* Build configuration list for PBXNativeTarget "ImageGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C4319831A0C32D90085829B /* Debug */,
-				9C4319841A0C32D90085829B /* Release */,
+				9C14B8321A37990000374DA8 /* Debug */,
+				9C14B8331A37990000374DA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9C43195B1A0C32D80085829B /* Project object */;
+	rootObject = 9C14B8081A37990000374DA8 /* Project object */;
 }
