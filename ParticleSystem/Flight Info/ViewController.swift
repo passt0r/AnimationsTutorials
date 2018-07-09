@@ -63,33 +63,54 @@ class ViewController: UIViewController {
     
     let emitterCell = CAEmitterCell()
     emitterCell.contents = UIImage(named: "flake.png")?.cgImage
-    emitterCell.birthRate = 150
+    emitterCell.birthRate = 50
     emitterCell.lifetime = 3.5
     emitterCell.lifetimeRange = 1.0
+    configureEmitionCell(emitterCell, xAcceleration: 10.0, emissionLongitude: -.pi)
     
-    emitter.emitterCells = [emitterCell]
+    let asymetricalEmitterCell = CAEmitterCell()
+    emitterCell.contents = UIImage(named: "flake2.png")?.cgImage
+    emitterCell.birthRate = 50
+    emitterCell.lifetime = 3.5
+    emitterCell.lifetimeRange = 1.0
+    emitterCell.spin = .pi
+    emitterCell.spinRange = .pi/2
+    configureEmitionCell(asymetricalEmitterCell, xAcceleration: -5.0, emissionLongitude: .pi/2)
     
-    emitterCell.yAcceleration = 70.0
-    emitterCell.xAcceleration = 10.0
-    emitterCell.velocity = 20.0
-    emitterCell.velocityRange = 200.0
-    emitterCell.emissionLongitude = -.pi
-    emitterCell.emissionRange = .pi * 0.5
+    let snowEmitterCell = CAEmitterCell()
+    snowEmitterCell.contents = UIImage(named: "flake1.png")?.cgImage
+    snowEmitterCell.birthRate = 50
+    snowEmitterCell.lifetime = 3.5
+    snowEmitterCell.lifetimeRange = 1.0
+    configureEmitionCell(snowEmitterCell, xAcceleration: 0.0, emissionLongitude: -.pi)
     
-    emitterCell.color = UIColor(red: 0.9, green: 1.0, blue: 1.0, alpha:
-        1.0).cgColor
+    emitter.emitterCells = [emitterCell, asymetricalEmitterCell, snowEmitterCell]
     
-    emitterCell.redRange = 0.1
-    emitterCell.greenRange = 0.1
-    emitterCell.blueRange = 0.1
     
-    emitterCell.scale = 0.8
-    emitterCell.scaleRange = 0.8
-    emitterCell.scaleSpeed = -0.15
-    
-    emitterCell.alphaRange = 0.75
-    emitterCell.alphaSpeed = -0.15
   }
+    
+    private func configureEmitionCell(_ emitterCell: CAEmitterCell, xAcceleration: CGFloat, emissionLongitude: CGFloat ) {
+        emitterCell.yAcceleration = 70.0
+        emitterCell.xAcceleration = xAcceleration
+        emitterCell.velocity = 20.0
+        emitterCell.velocityRange = 200.0
+        emitterCell.emissionLongitude = emissionLongitude
+        emitterCell.emissionRange = .pi * 0.5
+        
+        emitterCell.color = UIColor(red: 0.9, green: 1.0, blue: 1.0, alpha:
+            1.0).cgColor
+        
+        emitterCell.redRange = 0.1
+        emitterCell.greenRange = 0.1
+        emitterCell.blueRange = 0.1
+        
+        emitterCell.scale = 0.8
+        emitterCell.scaleRange = 0.8
+        emitterCell.scaleSpeed = -0.15
+        
+        emitterCell.alphaRange = 0.75
+        emitterCell.alphaSpeed = -0.15
+    }
   
   //MARK: custom methods
   
